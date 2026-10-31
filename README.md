@@ -2,34 +2,35 @@
 
 Cronômetro regressivo oficial para provas de culinária no estilo MasterChef, com tema preto e laranja, alertas sonoros de 15 em 15 minutos e nos últimos 10, 5 e 1 minuto, e modo telão (tela cheia somente com o relógio).
 
-## 🚀 Como publicar no GitHub Pages
+## 🚀 Como publicar no GitHub Pages (Resolvendo o erro 404 do main.tsx)
 
-Este projeto já está 100% configurado para o GitHub Pages com o fluxo automatizado do GitHub Actions.
+O erro `404 main.tsx` acontece porque o GitHub Pages padrão tenta carregar os arquivos sem compilar. O navegador não consegue rodar arquivos `.tsx` diretamente sem que o build (`dist`) seja gerado.
 
-### Passo a Passo:
+Você tem **2 formas super fáceis** de publicar:
 
-1. **Crie um repositório no GitHub**:
-   - Acesse [github.com/new](https://github.com/new)
-   - Dê um nome ao seu repositório (ex: `cronometro-masterchef`) e clique em **Create repository**.
+---
 
-2. **Envie os arquivos para o repositório**:
-   No seu terminal, dentro da pasta do projeto:
-   ```bash
-   git init
-   git add .
-   git commit -m "feat: MasterChef Cronometro Oficial"
-   git branch -M main
-   git remote add origin https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git
-   git push -u origin main
-   ```
+### Opção 1: Comando Automático (Mais Rápido e Recomendado)
 
-3. **Ative o GitHub Pages**:
-   - No GitHub, entre no seu repositório e clique na aba **Settings** (Configurações).
-   - No menu lateral esquerdo, clique em **Pages**.
-   - Em **Build and deployment** > **Source**, selecione:
-     👉 **GitHub Actions**
-   - Pronto! O workflow `.github/workflows/deploy.yml` irá compilar e publicar o site automaticamente em segundos no endereço:
-     `https://SEU_USUARIO.github.io/SEU_REPOSITORIO/`
+Basta rodar no seu terminal local:
+```bash
+npm run deploy
+```
+Este comando vai:
+1. Executar `npm run build` e gerar o pacote compilado na pasta `dist`
+2. Enviar a pasta `dist` diretamente para o branch `gh-pages` no seu repositório
+3. No GitHub (**Settings > Pages**), selecione a branch **gh-pages** e salve! Seu app abrirá funcionando 100%.
+
+---
+
+### Opção 2: Via GitHub Actions (Sem comandos extras)
+
+Se você já deu `git push` de todo o código no GitHub:
+1. Acesse o seu repositório no GitHub.
+2. Vá em **Settings** > **Pages** (no menu lateral esquerdo).
+3. Em **Build and deployment** > **Source**, mude de *"Deploy from a branch"* para:
+   👉 **GitHub Actions**
+4. Pronto! O arquivo `.github/workflows/deploy.yml` já incluído no projeto compilará o Vite e publicará os arquivos corretos automaticamente.
 
 ---
 
