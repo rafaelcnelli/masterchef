@@ -1,5 +1,6 @@
 {
-  "name": "react-example",
+  "name": "masterchef",
+  "homepage": "https://rafaelcnelli.github.io/masterchef",
   "private": true,
   "version": "0.0.0",
   "type": "module",
