@@ -1,0 +1,6 @@
+{
+  "name": "MasterChef Cronômetro Oficial",
+  "description": "Cronômetro regressivo de cozinha no estilo MasterChef com fundo preto, letras laranjas, alertas sonoros e visuais de 15 em 15 minutos e nos últimos 10, 5 e 1 minuto.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
